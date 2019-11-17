@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% block body %}
+<div class="container py-5">
+    <div class="row">
+        <div class="col-auto my-4 mx-auto">
+            <div class="card rounded-0 special-card">
+                <!--
+                <div class="card-header">
+                    <h3 class="mb-0">Enter your net income</h3>
+                </div>
+                -->
+                <div class="card-body">
+                    <form method=POST action="{{ url_for('medication') }}">
+                        <div class="form-group">
+                            <label for="exampleFormControlInput1">Label</label>
+                            <input type="text" class="form-control" name="label" placeholder="Vicodin">
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="day[]" value="monday" id="defaultCheck1">
+                            <label class="form-check-label" for="defaultCheck1">
+                                Mo
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="day[]" value="tuesday" id="defaultCheck2">
+                            <label class="form-check-label" for="defaultCheck2">
+                                Tu
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="day[]" value="wednesday" id="defaultCheck3">
+                            <label class="form-check-label" for="defaultCheck3">
+                                We
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="day[]" value="thursday" id="defaultCheck4">
+                            <label class="form-check-label" for="defaultCheck4">
+                                Th
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="day[]" value="friday" id="defaultCheck5">
+                            <label class="form-check-label" for="defaultCheck5">
+                                Fr
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="day[]" value="saturday" id="defaultCheck6">
+                            <label class="form-check-label" for="defaultCheck6">
+                                Sa
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="day[]" value="sunday" id="defaultCheck7">
+                            <label class="form-check-label" for="defaultCheck7">
+                                Su
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlInput1">Location</label>
+                            <input type="text" class="form-control" name="location" placeholder="Blue box on the counter">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlInput1">Notes</label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" name="notes" rows="3" placeholder="Take 1 pill"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Add</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
