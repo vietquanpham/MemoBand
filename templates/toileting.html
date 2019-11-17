@@ -10,18 +10,10 @@
                 </div>
                 -->
                 <div class="card-body">
-                    <form method=POST action="{{ url_for('meal') }}">
-                        <div class="form-group">
-                            <label for="exampleFormControlInput1">Meal</label>
-                            <input type="text" class="form-control" name="meal" placeholder="Lunch">
-                        </div>
+                    <form method=POST action="{{ url_for('toileting') }}">
                         <div class="form-group">
                             <label for="exampleFormControlInput1">Time</label>
                             <input type="time" class="form-control" name="time">
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleFormControlInput1">Notes</label>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" name="notes" rows="3" placeholder="In the fridge"></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary btn-block">Add</button>
                     </form>

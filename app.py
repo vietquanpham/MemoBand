@@ -42,6 +42,28 @@ def meal():
     else:
         return render_template("meal.html")
 
+@app.route("/sleep", methods=["GET", "POST"])
+def sleep():
+    if request.method == 'POST':
+        document = {
+            "time": request.form['time'],
+        }
+        db.insert("sleep", document)
+        return render_template("sleep.html")
+    else:
+        return render_template("sleep.html")
+
+@app.route("/toileting", methods=["GET", "POST"])
+def toileting():
+    if request.method == 'POST':
+        document = {
+            "time": request.form['time'],
+        }
+        db.insert("toileting", document)
+        return render_template("toileting.html")
+    else:
+        return render_template("toileting.html")
+
 if __name__ == "__main__":
     app.secret_key = "secretkey"
     app.run(host="localhost", port=4000, debug=True)
