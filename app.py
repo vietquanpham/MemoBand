@@ -21,6 +21,7 @@ def medication():
         document = {
             "label": request.form['label'],
             "day": request.form.getlist('day[]'),
+            "time": request.form['time'],
             "location": request.form['location'],
             "notes": request.form['notes'],
         }
@@ -53,16 +54,16 @@ def sleep():
     else:
         return render_template("sleep.html")
 
-@app.route("/toileting", methods=["GET", "POST"])
-def toileting():
+@app.route("/hydration", methods=["GET", "POST"])
+def hydration():
     if request.method == 'POST':
         document = {
             "time": request.form['time'],
         }
-        db.insert("toileting", document)
-        return render_template("toileting.html")
+        db.insert("hydration", document)
+        return render_template("hydration.html")
     else:
-        return render_template("toileting.html")
+        return render_template("hydration.html")
 
 if __name__ == "__main__":
     app.secret_key = "secretkey"
